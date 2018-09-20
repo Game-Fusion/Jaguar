@@ -11,22 +11,21 @@ local function diskCheck()
     term.setBackgroundColour(colours.black)
     term.clear()
     shell.run( "/disk/boot" )
-
-elseif fs.exists( "/disk/startgame" ) then
-  term.setBackgroundColour(colours.blue)
-  term.clear()
-  term.setTextColour(colours.white)
-  center(6, "Jaguar has crashed!" )
-  center(9, "Unaccepted disk format" )
-  center(12, "Rebooting in 8 seconds..." )
-  sleep(8)
-  os.reboot()
-  end
+  elseif fs.exists( "/disk/startgame" ) then
+    term.setBackgroundColour(colours.blue)
+    term.clear()
+    term.setTextColour(colours.white)
+    center(6, "Jaguar has crashed!" )
+    center(9, "Unaccepted disk format" )
+    center(12, "Rebooting in 8 seconds..." )
+    sleep(8)
+    os.reboot()
+    end
 end
 
 term.setBackgroundColour(colours.black)
 term.clear()
-paintutils.drawImage(paintutils.loadImage("/Jaguar/screen"),1,1) -- logo
+paintutils.drawImage(paintutils.loadImage ("/Jaguar/screen"), 1, 1) -- logo
 sleep(2)
 term.setBackgroundColour(colours.green)
 term.clear()
@@ -44,12 +43,6 @@ local function insert()
   flash()
   sleep(0.5)
   term.clear()
-  sleep(0.5)
-  flash()
-  sleep(0.5)
-  term.clear()
-  sleep(0.5)
-  flash()
 end
 
 insert()
